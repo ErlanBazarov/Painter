@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="136.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="479.0" minWidth="10.0" prefWidth="464.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Pane fx:id="drawinPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseDragged="#onMouseDragged" GridPane.columnIndex="1" />
+      <VBox alignment="TOP_CENTER" prefWidth="100.0" spacing="10.0" GridPane.halignment="CENTER">
+         <children>
+            <TitledPane animated="false" text="Drawing Color">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
+                     <children>
+                        <RadioButton fx:id="black" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#colorButtonClicked" selected="true" text="Black">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="colorToggleGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="red" layoutX="14.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#colorButtonClicked" text="Red" toggleGroup="$colorToggleGroup" />
+                        <RadioButton fx:id="green" layoutX="14.0" layoutY="66.0" mnemonicParsing="false" onMouseClicked="#colorButtonClicked" text="Green" toggleGroup="$colorToggleGroup" />
+                        <RadioButton fx:id="blue" layoutX="14.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#colorButtonClicked" text="Blue" toggleGroup="$colorToggleGroup" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" layoutX="10.0" layoutY="10.0" text="Pen Size">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
+                     <children>
+                        <RadioButton fx:id="small" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#sizeButtonClicked" text="Small">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="sizeToggleGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="medium" layoutX="14.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#sizeButtonClicked" selected="true" text="Medium" toggleGroup="$sizeToggleGroup" />
+                        <RadioButton fx:id="large" layoutX="14.0" layoutY="66.0" mnemonicParsing="false" onMouseClicked="#sizeButtonClicked" text="Large" toggleGroup="$sizeToggleGroup" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <Button fx:id="undo" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#undoButtonClicked" prefWidth="400.0" text="Undo" />
+            <Button fx:id="clear" layoutX="10.0" layoutY="295.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#clearButtonClicked" prefWidth="400.0" text="Clear" />
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </VBox>
+   </children>
+   <padding>
+      <Insets top="5.0" />
+   </padding>
+</GridPane>
